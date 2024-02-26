@@ -11,9 +11,9 @@ import com.gls.webServiceSpringBootSFGLSHeroku.models.entity.Emailmessage;
 
 public interface IEmailMessageDao extends JpaRepository<Emailmessage,Long>{
 	
-	/*@Query(value="SELECT sfid FROM salesforcebackup.emailmessagebackup LIMIT 1",nativeQuery=true)
-	public List<Emailmessage> findAllEmail();*/
 	@Query(value="SELECT * FROM salesforcebackup.emailmessagebackup LIMIT 5000", nativeQuery = true)
 	public List<Emailmessage> findAllcorreos();
+	
+	
 
 }

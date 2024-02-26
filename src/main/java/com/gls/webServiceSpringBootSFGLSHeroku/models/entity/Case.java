@@ -13,7 +13,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-@Table(name = "casebackup")
+@Table(name = "casosprueba")
 public class Case implements Serializable {
 
 	@Id

@@ -6,7 +6,7 @@ import com.gls.webServiceSpringBootSFGLSHeroku.models.entity.Case;
 
 public interface ICaseService {
 	
-
-	public List<Case> findAllCases();
+	public List<Case> findAll();
+	public void saveAllCases(List<Case> casos);
 
 }

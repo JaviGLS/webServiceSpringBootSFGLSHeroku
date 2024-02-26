@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+
 import com.gls.webServiceSpringBootSFGLSHeroku.models.dao.ICaseDao;
 import com.gls.webServiceSpringBootSFGLSHeroku.models.entity.Case;
 
@@ -16,10 +17,19 @@ public class CaseServiceImpl implements ICaseService{
 	private ICaseDao caseDao;
 	
 	@Override
-	@Transactional(readOnly = true)
-	public List<Case> findAllCases(){
-		
-		return (List<Case>) caseDao.findAllCases();
+	@Transactional
+	public void saveAllCases(List<Case> casos) {
+		// TODO Auto-generated method stub
+		System.out.println("*** esto es lo que hay en contracts"+casos);
+		caseDao.saveAll(casos);
 	}
+
+	@Override
+	public List<Case> findAll(){
+		// TODO Auto-generated method stub
+		return (List<Case>) caseDao.findAll();
+	}
+
+
 
 }
