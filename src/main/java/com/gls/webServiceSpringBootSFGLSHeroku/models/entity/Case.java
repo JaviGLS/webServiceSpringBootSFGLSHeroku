@@ -65,19 +65,14 @@ public class Case implements Serializable {
 	private Double n_mero_gestiones_realizadas;
 	private String suppliedemail;
 	private String sfid;
-
-	
-
 	
 	public Long getId() {
 		return id;
 	}
 
-
 	public void setId(Long id) {
 		this.id = id;
 	}
-
 
 	public String getNombreagencia() {
 		return nombreagencia;

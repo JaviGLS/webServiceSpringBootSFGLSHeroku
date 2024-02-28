@@ -14,4 +14,6 @@ public interface ICaseDao extends CrudRepository<Case,Long>{
 	
 	/*@Query(value="SELECT * FROM salesforcebackup.casebackup WHERE salesforcebackup.casebackup.Origin != 'Qualtrics' LIMIT 10000",nativeQuery=true)
 	public List<Case> findAllCases();*/
+	@Query("SELECT DISTINCT c.sfid FROM Case c")
+    List<String> findAllSfids();
 }
