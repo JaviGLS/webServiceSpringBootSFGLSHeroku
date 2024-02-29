@@ -9,16 +9,18 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-@Table(name = "emailmessagebackup")
+@Table(name = "emailmessageprueba")
 public class Emailmessage implements Serializable {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "emailmessageprueba_seq")
+	@SequenceGenerator(name = "emailmessageprueba_seq", sequenceName = "emailmessageprueba_id_seq", allocationSize = 1)
 	private Long id;
 
 	private String relatedtoid;
