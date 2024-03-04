@@ -22,6 +22,8 @@ public class EmailmessageRestController {
 	
 	@Autowired
 	private IEmailMessageService emailService;
+	@Autowired
+	private AsyncProcessor asyncProcessor;
 	
 	
 	@GetMapping("/email")
@@ -35,7 +37,7 @@ public class EmailmessageRestController {
 	@ResponseStatus(HttpStatus.CREATED)
 	public void create(@RequestBody List<Emailmessage> mails) {
 		System.out.println("*** esto es lo que hay en contracts rest controller"+mails);
-		emailService.saveAllEmail(mails);
+		asyncProcessor.processEmailsAsync(mails);
 	}
 
 }

@@ -37,14 +37,16 @@ public class EmailmessageServiceImpl implements IEmailMessageService{
 		// TODO Auto-generated method stub
 		//emailmessage.saveAll(mails);
 		try {
+			logger.info("emails antes mails",mails.size());
 	        // Proactive validation
 	        List<String> existingSfids = emailmessage.findAllSfids();
-	        List<Emailmessage> validCases = mails.stream()
+	        List<Emailmessage> validmails = mails.stream()
 	                .filter(c -> !existingSfids.contains(c.getSfid()))
 	                .collect(Collectors.toList());
 	
 	        // Handling non-duplicate cases
-	        emailmessage.saveAll(validCases);
+	        logger.info("emails antes de salvar validCases",validmails.size());
+	        emailmessage.saveAll(validmails);
 	
 	        // Handling duplicate cases (example: logging for review)
 	        List<Emailmessage> duplicateCases = mails.stream()
@@ -55,10 +57,10 @@ public class EmailmessageServiceImpl implements IEmailMessageService{
 	            // Log for review or initiate other actions as needed
 	        	logger.warn("Duplicate emails found: {}", duplicateCases.size());
 	        }
-	        logger.info("Los casos se guardaron perfectamente");
+	        logger.info("Los emails se guardaron perfectamente");
 		}catch (ConstraintViolationException e) {
             System.out.println("*** Se ha producido un error inesperado: " + e.getMessage());
-            logger.error("Los emails no se guardaron perfectamente");
+            logger.error("Los emails no se guardaron perfectamente",e.getMessage());
 		}
 	}
 

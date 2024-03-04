@@ -22,6 +22,8 @@ import com.gls.webServiceSpringBootSFGLSHeroku.models.service.ICaseService;
 public class CaseRestController {
 	@Autowired
 	private ICaseService casosService;
+	 @Autowired
+	 private AsyncProcessor asyncProcessor;
 	
 	@GetMapping("/caso")
 	public List<Case> index(){
@@ -33,7 +35,7 @@ public class CaseRestController {
 	@ResponseStatus(HttpStatus.CREATED)
 	public void create(@RequestBody List<Case> casos) {
 		System.out.println("*** esto es lo que hay en contracts rest controller"+casos);
-		casosService.saveAllCases(casos);
+		asyncProcessor.processCasesAsync(casos);
 	}
 
 
