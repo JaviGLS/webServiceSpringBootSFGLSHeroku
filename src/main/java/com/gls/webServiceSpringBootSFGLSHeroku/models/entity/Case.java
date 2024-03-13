@@ -65,9 +65,187 @@ public class Case implements Serializable {
 	private Double n_mero_gestiones_realizadas;
 	private String suppliedemail;
 	private String sfid;
+	/* inicio se añaden estos campos */
+	@Column(name = "id_parcelshop__c")
+	private String id_parcelshop;
+	@Column(name = "tipificaciones_backoffice__c")
+	private String tipificaciones_backoffice;
+	private String parentid;
+	private String accountid;
+	private String suppliedname;
+	@Column(name = "codplaza_org__c")
+	private String codplaza_org;
+	@Column(name = "detractor__c")
+	private Boolean detractor;
+	@Column(name = "codigo_cliente__c")
+	private String codigo_cliente;
+	@Column(name = "numeroexpednovalido__c")
+	private Boolean numeroexpednovalido;
+	@Column(name = "nps__c")
+	private Double nps;
+	private String sourceid;
+	@Column(name = "agencia__c")
+	private String agencia;
+	@Column(name = "pais_gls__c")
+	private String pais_gls;
+	@Column(name = "promotor__c")
+	private Boolean promotor;
+	private String contactemail;
+	@Column(name = "formulario_web__c")
+	private String formulario_web;
+	@Column(name = "codexp__c")
+	private String codexp;
+	@Column(name = "motivo_de_consulta__c")
+	private String motivo_de_consulta;
+	/* fin se añaden estos campos */
+
 	
 	public Long getId() {
 		return id;
+	}
+
+	public String getId_parcelshop() {
+		return id_parcelshop;
+	}
+
+	public void setId_parcelshop(String id_parcelshop) {
+		this.id_parcelshop = id_parcelshop;
+	}
+
+	public String getTipificaciones_backoffice() {
+		return tipificaciones_backoffice;
+	}
+
+	public void setTipificaciones_backoffice(String tipificaciones_backoffice) {
+		this.tipificaciones_backoffice = tipificaciones_backoffice;
+	}
+
+	public String getParentid() {
+		return parentid;
+	}
+
+	public void setParentid(String parentid) {
+		this.parentid = parentid;
+	}
+
+	public String getAccountid() {
+		return accountid;
+	}
+
+	public void setAccountid(String accountid) {
+		this.accountid = accountid;
+	}
+
+	public String getSuppliedname() {
+		return suppliedname;
+	}
+
+	public void setSuppliedname(String suppliedname) {
+		this.suppliedname = suppliedname;
+	}
+
+	public String getCodplaza_org() {
+		return codplaza_org;
+	}
+
+	public void setCodplaza_org(String codplaza_org) {
+		this.codplaza_org = codplaza_org;
+	}
+
+	public Boolean getDetractor() {
+		return detractor;
+	}
+
+	public void setDetractor(Boolean detractor) {
+		this.detractor = detractor;
+	}
+
+	public String getCodigo_cliente() {
+		return codigo_cliente;
+	}
+
+	public void setCodigo_cliente(String codigo_cliente) {
+		this.codigo_cliente = codigo_cliente;
+	}
+
+	public Boolean getNumeroexpednovalido() {
+		return numeroexpednovalido;
+	}
+
+	public void setNumeroexpednovalido(Boolean numeroexpednovalido) {
+		this.numeroexpednovalido = numeroexpednovalido;
+	}
+
+	public Double getNps() {
+		return nps;
+	}
+
+	public void setNps(Double nps) {
+		this.nps = nps;
+	}
+
+	public String getSourceid() {
+		return sourceid;
+	}
+
+	public void setSourceid(String sourceid) {
+		this.sourceid = sourceid;
+	}
+
+	public String getAgencia() {
+		return agencia;
+	}
+
+	public void setAgencia(String agencia) {
+		this.agencia = agencia;
+	}
+
+	public String getPais_gls() {
+		return pais_gls;
+	}
+
+	public void setPais_gls(String pais_gls) {
+		this.pais_gls = pais_gls;
+	}
+
+	public Boolean getPromotor() {
+		return promotor;
+	}
+
+	public void setPromotor(Boolean promotor) {
+		this.promotor = promotor;
+	}
+
+	public String getContactemail() {
+		return contactemail;
+	}
+
+	public void setContactemail(String contactemail) {
+		this.contactemail = contactemail;
+	}
+
+	public String getFormulario_web() {
+		return formulario_web;
+	}
+
+	public void setFormulario_web(String formulario_web) {
+		this.formulario_web = formulario_web;
+	}
+
+	public String getCodexp() {
+		return codexp;
+	}
+
+	public void setCodexp(String codexp) {
+		this.codexp = codexp;
+	}
+
+	public String getMotivo_de_consulta() {
+		return motivo_de_consulta;
+	}
+
+	public void setMotivo_de_consulta(String motivo_de_consulta) {
+		this.motivo_de_consulta = motivo_de_consulta;
 	}
 
 	public void setId(Long id) {

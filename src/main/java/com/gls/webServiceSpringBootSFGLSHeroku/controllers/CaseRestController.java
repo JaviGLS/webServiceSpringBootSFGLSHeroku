@@ -34,7 +34,7 @@ public class CaseRestController {
 	@PostMapping("/casos")
 	@ResponseStatus(HttpStatus.CREATED)
 	public void create(@RequestBody List<Case> casos) {
-		System.out.println("*** esto es lo que hay en contracts rest controller"+casos);
+		System.out.println("*** esto es lo que hay en contracts rest controller"+casos.size());
 		asyncProcessor.processCasesAsync(casos);
 	}
 
